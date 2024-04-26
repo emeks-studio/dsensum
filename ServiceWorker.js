@@ -123,19 +123,19 @@ async function q(a, e) {
   return new Response(c, n);
 }
 const A = (a) => new URL(String(a), location.href).href.replace(new RegExp(`^${location.origin}`), "");
-function T(a, e) {
+function v(a, e) {
   const t = new URL(a);
   for (const s of e)
     t.searchParams.delete(s);
   return t.href;
 }
 async function H(a, e, t, s) {
-  const r = T(e.url, t);
+  const r = v(e.url, t);
   if (e.url === r)
     return a.match(e, s);
   const n = Object.assign(Object.assign({}, s), { ignoreSearch: !0 }), c = await a.keys(e, n);
   for (const i of c) {
-    const o = T(i.url, t);
+    const o = v(i.url, t);
     if (r === o)
       return a.match(i, s);
   }
@@ -919,7 +919,7 @@ try {
   self["workbox:routing:6.5.0"] && _();
 } catch {
 }
-const v = "GET", R = (a) => a && typeof a == "object" ? a : { handle: a };
+const T = "GET", R = (a) => a && typeof a == "object" ? a : { handle: a };
 class g {
   /**
    * Constructor for Route class.
@@ -932,7 +932,7 @@ class g {
    * @param {string} [method='GET'] The HTTP method to match the Route
    * against.
    */
-  constructor(e, t, s = v) {
+  constructor(e, t, s = T) {
     this.handler = R(t), this.match = e, this.method = s;
   }
   /**
@@ -1111,7 +1111,7 @@ class Y {
    * @param {string} [method='GET'] The HTTP method to associate with this
    * default handler. Each method has its own default.
    */
-  setDefaultHandler(e, t = v) {
+  setDefaultHandler(e, t = T) {
     this._defaultHandlerMap.set(t, R(e));
   }
   /**
@@ -1291,7 +1291,7 @@ class he extends g {
     return !!this._allowlist.some((r) => r.test(s));
   }
 }
-le([{"revision":null,"url":"assets/index-234COQ2W.css"},{"revision":null,"url":"assets/index-SgjXge6w.js"},{"revision":"8237bf8114f3805ea6a4f34978975380","url":"index.html"},{"revision":"572ab1099ec88e66b6457bbe9caa9d45","url":"registerSW.js"},{"revision":"97f63c95e1e388889f2dd4858bedd28f","url":"assets/img/favicon.svg"},{"revision":"2e818667ce90c7722f69c755f2b910dd","url":"assets/img/favicon.ico"},{"revision":"e085559e2718fde9dce21d7393e4614a","url":"assets/img/apple-touch-icon.png"},{"revision":"8b96ef4611f09c893dd1c777f41ff366","url":"assets/img/android-chrome-192x192.png"},{"revision":"d9eebe7e1ea5db49ea00127dd4282e80","url":"assets/img/android-chrome-512x512.png"},{"revision":"f77c87f977e0fcce05a6df46c885a129","url":"assets/robots.txt"},{"revision":"b6b4cab68850ca9d4337d40a96fba34a","url":"manifest.webmanifest"}]);
+le({ url: [{"revision":null,"url":"assets/index-_ikRs_Y0.js"},{"revision":null,"url":"assets/index-ziIyMhF-.css"},{"revision":"73adb434aece0312ce002ca69acc088d","url":"index.html"},{"revision":"572ab1099ec88e66b6457bbe9caa9d45","url":"registerSW.js"},{"revision":"97f63c95e1e388889f2dd4858bedd28f","url":"assets/img/favicon.svg"},{"revision":"2e818667ce90c7722f69c755f2b910dd","url":"assets/img/favicon.ico"},{"revision":"e085559e2718fde9dce21d7393e4614a","url":"assets/img/apple-touch-icon.png"},{"revision":"8b96ef4611f09c893dd1c777f41ff366","url":"assets/img/android-chrome-192x192.png"},{"revision":"d9eebe7e1ea5db49ea00127dd4282e80","url":"assets/img/android-chrome-512x512.png"},{"revision":"f77c87f977e0fcce05a6df46c885a129","url":"assets/robots.txt"},{"revision":"b6b4cab68850ca9d4337d40a96fba34a","url":"manifest.webmanifest"}], revision: "1.0.1" });
 ce();
 x(new he(ie("index.html")));
 //# sourceMappingURL=ServiceWorker.js.map
